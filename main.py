@@ -126,11 +126,7 @@ async def generate_qr(req: QRRequest):
     if req.type != "star":
         raise HTTPException(status_code=400, detail="Only 'star' type is supported.")
 
-    cloudinary.config(
-        cloud_name="dpxafahfu",
-        api_key="114534797426773",
-        api_secret="jnJsWE0MQm4Af0EXmsVHeh0OmUQ"
-    )
+    cloudinary.config()
 
     svg = generate_star_qr_svg(req.url)
     png_bytes = svg_to_png_bytes(svg)

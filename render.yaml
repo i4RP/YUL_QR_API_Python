@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: star-qr-api
+    env: python
+    buildCommand: ""
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: CLOUDINARY_URL
+        value: cloudinary://114534797426773:jnJsWE0MQm4Af0EXmsVHeh0OmUQ@dpxafahfu
